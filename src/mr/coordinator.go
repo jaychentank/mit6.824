@@ -1,13 +1,15 @@
 package mr
 
-import "fmt"
-import "sync"
-import "time"
-import "log"
-import "net"
-import "os"
-import "net/rpc"
-import "net/http"
+import (
+	"fmt"
+	"log"
+	"net"
+	"net/http"
+	"net/rpc"
+	"os"
+	"sync"
+	"time"
+)
 
 type JobState int
 

@@ -76,7 +76,7 @@ func handleMap(task Task, mapf MapF) error {
 	defer file.Close()
 
 	kva := mapf(filename, string(content))
-	var encoders []*json.Encoder
+	var encoders []*json.Encoder // It is easy for people to read and write, but also easy for machines to parse and generate, and effectively improve the efficiency of network transmission
 	for i := 0; i < task.NReduce; i++ {
 		f, err := os.Create(fmt.Sprintf("mr-%d-%d", task.Map.Id, i))
 		if err != nil {
